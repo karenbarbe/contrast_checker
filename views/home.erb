@@ -1,0 +1,52 @@
+  <h1>Simple Contrast Checker</h1>
+<section>
+  <div>
+    <h2>Contrast</h2>
+    <p><%= @ratio %>:1</p>
+  </div>
+  <div class="two-col">
+    <div>
+      <div class="color-sample" style="background-color: #<%= @fg_color %>; color: <%= @fg_contrast_value %>;">
+      <h2>#<%= @fg_color %></h2>
+      <h3><%= @fg_name %></h3>
+      </div>
+      <form class="input-container">
+        <label for="foreground_color">Enter hex color</label>
+        <input id="foreground_color" type="text" name="foreground_color" placeholder=<%= @fg_color %>>
+      </form>
+    </div>
+    <div>
+      <div class="color-sample" style="background-color: #<%= @bg_color %>; color: <%= @bg_contrast_value %>;">
+      <h2>#<%= @bg_color %></h2>
+      <h3><%= @bg_name %></h3>
+      </div>
+      <form class="input-container">
+        <label for="foreground_color">Enter hex color</label>
+        <input id="foreground_color" type="text" name="foreground_color" placeholder=<%= @bg_color %>>
+      </form>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>AA</th>
+        <th>AAA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Normal text</th>
+        <td><%= @aa %></td>
+        <td><%= @aaa %></td>
+      </tr>
+      <tr>
+        <th>Large text</th>
+        <td><%= @aa_large %></td>
+        <td><%= @aaa_large %></td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
