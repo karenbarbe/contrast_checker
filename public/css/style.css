@@ -219,7 +219,13 @@ strong {
 /* BUTTONS */
 
 .button-primary {
-  display: none;
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 .button-icon {
