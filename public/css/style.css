@@ -222,6 +222,12 @@ strong {
   display: none;
 }
 
+.button-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid black;
+}
+
 /* TABLE */
 
 .table {
@@ -256,8 +262,8 @@ strong {
 }
 
 .table-icon {
-  --pass: url(/assets/pass.svg);
-  --fail: url(/assets/fail.svg);
+  --pass: url(/icons/pass.svg);
+  --fail: url(/icons/fail.svg);
 
   width: 17px;
   height: 16px;
