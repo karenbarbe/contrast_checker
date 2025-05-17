@@ -21,7 +21,7 @@
               <div class="text-input-container">
                 <span style="color: <%= @fg_contrast_value %>;">#</span>
                 <input id="foreground_color" type="text" class="text-input" name="foreground_color" value="<%= @fg_color %>" style="color: <%= @fg_contrast_value %>; border-block-end-color: <%= @fg_contrast_value%>;">
-                <button type="submit" class="button-icon" title="Check colors" aria-label="Check colors">X</button>
+                <button type="submit" class="button-icon" title="Check colors" aria-label="Check colors" style="--stroke-color: <%= @fg_contrast_value %>;"><%= erb :"svg/_right_arrow" %></button>
 
               </div>
             </div>
@@ -36,7 +36,7 @@
               <div class="text-input-container">
                 <span style="color: <%= @bg_contrast_value %>;">#</span>
                 <input id="background_color" type="text" class="text-input" name="background_color" value="<%= @bg_color %>" style="color: <%= @bg_contrast_value %>; border-block-end-color: <%= @bg_contrast_value%>">
-                <button type="submit" class="button-icon" title="Check colors" aria-label="Check colors">X</button>
+                <button type="submit" class="button-icon" title="Check colors" aria-label="Check colors" style="--stroke-color: <%= @bg_contrast_value %>;"><%= erb :"svg/_right_arrow" %></button>
               </div>
             </div>
             <p style="color: <%= @bg_contrast_value %>;"><%= @bg_name %></p>
