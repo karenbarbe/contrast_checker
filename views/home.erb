@@ -15,7 +15,7 @@
       <div class="color-form">
         <div>
           <h2 class="h3">Foreground</h2>
-          <div class="color-sample" style="background-color: #<%= @fg_color %>;">
+          <div class="color-sample" style="background-color: #<%= @fg_color %>; border-color: <%= @fg_color.downcase() == "ffffff" ? "var(--clay_gray)" : "transparent" %>;">
             <div class="input-container">
               <label for="foreground_color" style="color: <%= @fg_contrast_value %>;">HEX</label>
               <div class="text-input-container">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h2 class="h3">Background</h2>
-          <div class="color-sample" style="background-color: #<%= @bg_color %>">
+          <div class="color-sample" style="background-color: #<%= @bg_color %>; border-color: <%= @bg_color.downcase() == "ffffff" ? "var(--clay_gray)" : "transparent" %>;">
             <div class="input-container">
               <label for="background_color" style="color: <%= @bg_contrast_value %>;">HEX</label>
               <div class="text-input-container">
@@ -123,7 +123,7 @@
   
   </section>
   
-  <section class="section contrast-demo" style="background-color: #<%= @bg_color %>;">
+  <section class="section contrast-demo" style="background-color: #<%= @bg_color %>; border-color: <%= @bg_color.downcase() == "ffffff" ? "var(--clay_gray)" : "transparent" %>;">
     <p class="demo-h1" style="color: #<%= @fg_color %>;">Like a River Runs</p>
     <p class="demo-large-text" style="color: #<%= @fg_color %>;">Rivers yield to the shape of the Earth.</p>
     <p class="demo-large-text-bold" style="color: #<%= @fg_color %>;">Rivers have small beginnings.</p>
