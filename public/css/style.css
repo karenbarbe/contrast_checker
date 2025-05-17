@@ -229,9 +229,13 @@ strong {
 }
 
 .button-icon {
+  --stroke-color: black;
   width: 1.5rem;
   height: 1.5rem;
-  border: 1px solid black;
+
+  svg {
+    stroke: var(--stroke-color);
+  }
 }
 
 /* TABLE */
