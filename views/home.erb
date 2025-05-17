@@ -13,7 +13,7 @@
   
     <form action="/check_contrast" class="color-form">
       <div>
-        <h2 class="h2">Foreground</h2>
+        <h2 class="h3">Foreground</h2>
         <div class="color-sample" style="background-color: #<%= @fg_color %>;">
   
           <div class="input-container">
@@ -29,7 +29,7 @@
   
       </div>
       <div>
-        <h2 class="h2">Background</h2>
+        <h2 class="h3">Background</h2>
         <div class="color-sample" style="background-color: #<%= @bg_color %>">
   
           <div class="input-container">
@@ -53,14 +53,14 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Category</th>
-          <th>AA</th>
-          <th>AAA</th>
+          <th class="h2">Category</th>
+          <th class="h2">AA</th>
+          <th class="h2">AAA</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th>Normal text</th>
+          <th class="h2">Normal text</th>
           <td>
             <div class="table-data-icon">
               <div class="table-icon" style="background-image: <%= @aa == "pass" ? "var(--pass)" : "var(--fail)"%>;">
@@ -82,7 +82,7 @@
         </tr>
   
         <tr>
-          <th>Large text</th>
+          <th class="h2">Large text</th>
           <td>
             <div class="table-data-icon">
               <div class="table-icon" style="background-image: <%= @aa_large == "pass" ? "var(--pass)" : "var(--fail)"%>;">
@@ -103,7 +103,7 @@
         </tr>
   
         <tr>
-          <th>UI elements</th>
+          <th class="h2">UI elements</th>
           <td>
             <div class="table-data-icon">
               <div class="table-icon" style="background-image: <%= @aa_large == "pass" ? "var(--pass)" : "var(--fail)"%>;">
@@ -132,5 +132,9 @@
     <p class="demo-large-text" style="color: #<%= @fg_color %>;">Rivers yield to the shape of the Earth.</p>
     <p class="demo-large-text-bold" style="color: #<%= @fg_color %>;">Rivers have small beginnings.</p>
     <p class="demo-normal-text" style="color: #<%= @fg_color %>;">A life is like a river. We flow in an endless dance of strength and surrender. We shape and are shaped by our surroundings, we grow with the rain and we ebb with the heat. We fall apart, and we pool ourselves together. We become what we carry, nourishing lives we may never see. For times, we join with other streams, never knowing how long we will run together and when we will split apart. And for all our forks and confluences, we all return to the same source.</p>
+    <div class="demo-button-container">
+      <input type="text" class="demo-input" style="color: #<%= @fg_color %>; border-color: #<%= @fg_color %>;">
+         <button type="button" class="demo-button" style="color: #<%= @bg_color %>; background-color: #<%= @fg_color %>;">Protect rivers</button>
+    </div>
   </section>
 </div>
