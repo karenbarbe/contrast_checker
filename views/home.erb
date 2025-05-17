@@ -11,42 +11,38 @@
    : "var(--white)"%>;"><%= @ratio %><span class="colon-spacer">:</span>1</p>
     </div>
   
-    <form action="/check_contrast" class="color-form">
-      <div>
-        <h2 class="h3">Foreground</h2>
-        <div class="color-sample" style="background-color: #<%= @fg_color %>;">
-  
-          <div class="input-container">
-            <label for="foreground_color" style="color: <%= @fg_contrast_value %>;">HEX</label>
-            <div class="text-input-container">
-              <span style="color: <%= @fg_contrast_value %>;">#</span>
-              <input id="foreground_color" type="text" class="text-input" name="foreground_color" value=<%= @fg_color %> style="color: <%= @fg_contrast_value %>; border-block-end-color: <%= @fg_contrast_value%>;">
+    <form action="/check_contrast">
+      <div class="color-form">
+        <div>
+          <h2 class="h3">Foreground</h2>
+          <div class="color-sample" style="background-color: #<%= @fg_color %>;">
+            <div class="input-container">
+              <label for="foreground_color" style="color: <%= @fg_contrast_value %>;">HEX</label>
+              <div class="text-input-container">
+                <span style="color: <%= @fg_contrast_value %>;">#</span>
+                <input id="foreground_color" type="text" class="text-input" name="foreground_color" value="<%= @fg_color %>" style="color: <%= @fg_contrast_value %>; border-block-end-color: <%= @fg_contrast_value%>;">
+                <button type="submit" class="button-icon" title="Check colors" aria-label="Check colors">X</button>
+
+              </div>
             </div>
+            <p style="color: <%= @fg_contrast_value %>;"><%= @fg_name %></p>
           </div>
-          <p style="color: <%= @fg_contrast_value %>;"><%= @fg_name %></p>
-  
         </div>
-  
-      </div>
-      <div>
-        <h2 class="h3">Background</h2>
-        <div class="color-sample" style="background-color: #<%= @bg_color %>">
-  
-          <div class="input-container">
-            <label for="foreground_color" style="color: <%= @bg_contrast_value %>;">HEX</label>
-            <div class="text-input-container">
-              <span style="color: <%= @bg_contrast_value %>;">#</span>
-              <input id="background_color" type="text" class="text-input" name="background_color" value=<%= @bg_color %> style="color: <%= @bg_contrast_value %>;
- border-block-end-color: <%= @bg_contrast_value%>">
+        <div>
+          <h2 class="h3">Background</h2>
+          <div class="color-sample" style="background-color: #<%= @bg_color %>">
+            <div class="input-container">
+              <label for="background_color" style="color: <%= @bg_contrast_value %>;">HEX</label>
+              <div class="text-input-container">
+                <span style="color: <%= @bg_contrast_value %>;">#</span>
+                <input id="background_color" type="text" class="text-input" name="background_color" value="<%= @bg_color %>" style="color: <%= @bg_contrast_value %>; border-block-end-color: <%= @bg_contrast_value%>">
+                <button type="submit" class="button-icon" title="Check colors" aria-label="Check colors">X</button>
+              </div>
             </div>
+            <p style="color: <%= @bg_contrast_value %>;"><%= @bg_name %></p>
           </div>
-          <p style="color: <%= @bg_contrast_value %>;"><%= @bg_name %></p>
-  
         </div>
-  
       </div>
-  
-      <button type="submit" class="button-primary">Check contrast</button>
   
     </form>
   
