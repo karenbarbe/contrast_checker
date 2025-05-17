@@ -1,52 +1,136 @@
-  <h1>Simple Contrast Checker</h1>
-<section>
-  <div>
-    <h2>Contrast</h2>
-    <p><%= @ratio %>:1</p>
-  </div>
-  <div class="two-col">
-    <div>
-      <div class="color-sample" style="background-color: #<%= @fg_color %>; color: <%= @fg_contrast_value %>;">
-      <h2>#<%= @fg_color %></h2>
-      <h3><%= @fg_name %></h3>
-      </div>
-      <form class="input-container">
-        <label for="foreground_color">Enter hex color</label>
-        <input id="foreground_color" type="text" name="foreground_color" placeholder=<%= @fg_color %>>
-      </form>
-    </div>
-    <div>
-      <div class="color-sample" style="background-color: #<%= @bg_color %>; color: <%= @bg_contrast_value %>;">
-      <h2>#<%= @bg_color %></h2>
-      <h3><%= @bg_name %></h3>
-      </div>
-      <form class="input-container">
-        <label for="foreground_color">Enter hex color</label>
-        <input id="foreground_color" type="text" name="foreground_color" placeholder=<%= @bg_color %>>
-      </form>
-    </div>
-  </div>
+<div class="two-col main">
+  <section class="section">
+  <h1 class="h1">Simple Contrast Checker</h1>
+<p>Check the color contrast to make sure your design meets WCAG (Web Content Accessibility Guidelines) standards.
+</p>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>AA</th>
-        <th>AAA</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>Normal text</th>
-        <td><%= @aa %></td>
-        <td><%= @aaa %></td>
-      </tr>
-      <tr>
-        <th>Large text</th>
-        <td><%= @aa_large %></td>
-        <td><%= @aaa_large %></td>
-      </tr>
-    </tbody>
-  </table>
-
-</section>
+    <div class="contrast-container">
+      <h2>Contrast</h2>
+      <p class="contrast-ratio" style="background-color: <%= @ratio >= 4.5 ? "var(--green)"
+   : "var(--dark_red)"%>; color: <%= @ratio >= 4.5 ? "var(--black)"
+   : "var(--white)"%>;"><%= @ratio %><span class="colon-spacer">:</span>1</p>
+    </div>
+  
+    <form action="/check_contrast" class="color-form">
+      <div>
+        <h2 class="h2">Foreground</h2>
+        <div class="color-sample" style="background-color: #<%= @fg_color %>;">
+  
+          <div class="input-container">
+            <label for="foreground_color" style="color: <%= @fg_contrast_value %>;">HEX</label>
+            <div class="text-input-container">
+              <span style="color: <%= @fg_contrast_value %>;">#</span>
+              <input id="foreground_color" type="text" class="text-input" name="foreground_color" value=<%= @fg_color %> style="color: <%= @fg_contrast_value %>; border-block-end-color: <%= @fg_contrast_value%>;">
+            </div>
+          </div>
+          <p style="color: <%= @fg_contrast_value %>;"><%= @fg_name %></p>
+  
+        </div>
+  
+      </div>
+      <div>
+        <h2 class="h2">Background</h2>
+        <div class="color-sample" style="background-color: #<%= @bg_color %>">
+  
+          <div class="input-container">
+            <label for="foreground_color" style="color: <%= @bg_contrast_value %>;">HEX</label>
+            <div class="text-input-container">
+              <span style="color: <%= @bg_contrast_value %>;">#</span>
+              <input id="background_color" type="text" class="text-input" name="background_color" value=<%= @bg_color %> style="color: <%= @bg_contrast_value %>;
+ border-block-end-color: <%= @bg_contrast_value%>">
+            </div>
+          </div>
+          <p style="color: <%= @bg_contrast_value %>;"><%= @bg_name %></p>
+  
+        </div>
+  
+      </div>
+  
+      <button type="submit" class="button-primary">Check contrast</button>
+  
+    </form>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>AA</th>
+          <th>AAA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Normal text</th>
+          <td>
+            <div class="table-data-icon">
+              <div class="table-icon" style="background-image: <%= @aa == "pass" ? "var(--pass)" : "var(--fail)"%>;">
+              </div>
+              <span><%= @aa.capitalize()%></span>
+            </div>
+          </td>
+  
+          <td>
+  
+            <div class="table-data-icon">
+              <div class="table-icon" style="background-image: <%= @aaa == "pass" ? "var(--pass)" : "var(--fail)"%>;">
+              </div>
+              <span><%= @aaa.capitalize()%></span>
+            </div>
+  
+          </td>
+  
+        </tr>
+  
+        <tr>
+          <th>Large text</th>
+          <td>
+            <div class="table-data-icon">
+              <div class="table-icon" style="background-image: <%= @aa_large == "pass" ? "var(--pass)" : "var(--fail)"%>;">
+              </div>
+              <span><%= @aa_large.capitalize()%></span>
+            </div>
+          </td>
+  
+          <td>
+  
+            <div class="table-data-icon">
+              <div class="table-icon" style="background-image: <%= @aaa_large == "pass" ? "var(--pass)" : "var(--fail)"%>;">
+              </div>
+              <span><%= @aaa_large.capitalize()%></span>
+            </div>
+  
+          </td>
+        </tr>
+  
+        <tr>
+          <th>UI elements</th>
+          <td>
+            <div class="table-data-icon">
+              <div class="table-icon" style="background-image: <%= @aa_large == "pass" ? "var(--pass)" : "var(--fail)"%>;">
+              </div>
+              <span><%= @aa_large.capitalize()%></span>
+            </div>
+          </td>
+  
+          <td>
+  
+            <div class="table-data-icon">
+              <div class="table-icon" style="background-image: <%= @aaa_large == "pass" ? "var(--pass)" : "var(--fail)"%>;">
+              </div>
+              <span><%= @aaa_large.capitalize()%></span>
+            </div>
+  
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </section>
+  
+  <section class="section contrast-demo" style="background-color: #<%= @bg_color %>;">
+    <p class="demo-h1" style="color: #<%= @fg_color %>;">Like a River Runs</p>
+    <p class="demo-large-text" style="color: #<%= @fg_color %>;">Rivers yield to the shape of the Earth.</p>
+    <p class="demo-large-text-bold" style="color: #<%= @fg_color %>;">Rivers have small beginnings.</p>
+    <p class="demo-normal-text" style="color: #<%= @fg_color %>;">A life is like a river. We flow in an endless dance of strength and surrender. We shape and are shaped by our surroundings, we grow with the rain and we ebb with the heat. We fall apart, and we pool ourselves together. We become what we carry, nourishing lives we may never see. For times, we join with other streams, never knowing how long we will run together and when we will split apart. And for all our forks and confluences, we all return to the same source.</p>
+  </section>
+</div>
