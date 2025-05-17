@@ -308,6 +308,7 @@ strong {
   height: 14rem;
   border-radius: 0.25rem;
   padding: var(--spacing-05);
+  border: 1px solid transparent;
 }
 
 /* TEXT INPUT */
@@ -354,6 +355,16 @@ strong {
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  border-block-start: 1px solid transparent;
+  padding-block: var(--spacing-12);
+}
+
+@media screen and (min-width: 768px) {
+  .contrast-demo {
+    padding-block: var(--spacing-08);
+    border-block-start: 0;
+    border-inline-start: 1px solid transparent;
+  }
 }
 
 .demo-h1 {
@@ -371,6 +382,7 @@ strong {
 }
 
 .demo-normal-text {
+  max-width: 80ch;
   font-size: 1rem;
 }
 .demo-button-container {
