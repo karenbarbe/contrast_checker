@@ -315,6 +315,7 @@ strong {
 .input-container {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-02);
 }
 
 .input-container label {
@@ -339,6 +340,11 @@ strong {
   background-color: transparent;
   border-block-end-width: 1px;
   border-block-end-style: solid;
+}
+
+.text-input:hover {
+  outline-width: 1px;
+  outline-style: solid;
 }
 
 /* CONTRAST DEMO */
