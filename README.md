@@ -1,18 +1,31 @@
-# sinatra-template
+# Simple Contrast Checker
 
-Use this repository to create new Sinatra apps. 
+Simple Contrast Checker is a user-friendly web app designed to help designers and accessibility professionals check the contrast between two hex colors in order to comply with WCAG (Web Content Accessibility Guidelines) AA and AAA level requirements.
 
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
+The web app uses two APIs to request the information:
 
-```ruby
-require "sinatra/activerecord"
-```
+- **WebAIM Contrast Checker API** to provide the contrast ratio between the checked colors and pass/fail statements for each level for normal and large texts and UI elements.
+- **The Color API** to provide color names and a contrast value (black or white) according to the requested color.
 
-And in the `config/environment.rb` file add this code block:
+## Prerequisites
 
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+- Ruby version: `3.3.0`
+
+## Getting started
+
+To run this app:
+
+1. Clone this repository
+   ```bash
+   git clone https://github.com/karenbarbe/contrast_checker.git
+   cd contrast_checker
+   ```
+2. Run development server `bin/server`
+3. Set up `bin/setup`
+
+## User stories
+
+- As a user, I want to enter two hex color codes to check the contrast between them.
+- As a user, I want to easily identify which color is being used for the foreground and background respectively.
+- As a user, I want to receive clear messages when a color combination passes or fail a requirement.
+- As a user, I want to visualize how the compared colors look like when in use.
