@@ -4,8 +4,8 @@ Simple Contrast Checker is a user-friendly web app designed to help designers an
 
 The web app uses two APIs to request the information:
 
-- **WebAIM Contrast Checker API** to provide the contrast ratio between the checked colors and pass/fail statements for each level for normal and large texts and UI elements.
-- **The Color API** to provide color names and a contrast value (black or white) according to the requested color.
+- **WebAIM Contrast Checker API** — provides the contrast ratio between the checked colors and pass/fail statements for each level for normal and large texts and UI elements.
+- **The Color API** — provides color names and a contrast value (black or white) according to the requested color.
 
 ## Prerequisites
 
