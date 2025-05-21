@@ -4,6 +4,14 @@ require "http"
 require "json"
 require_relative "validate_hex"
 
+set :root, File.expand_path(File.dirname(__FILE__))
+
+set :views, File.join(settings.root, "views")
+
+set :public_folder, File.join(settings.root, "public")
+
+set :static, true
+
 get("/") do
   @fg_color = "d473c0"
   @bg_color = "511c29"
@@ -42,7 +50,6 @@ get("/check_contrast") do
     @bg_error_message = "Oops! Invalid hex code"
   end
 
-
   request_colors_apis(@fg_color, @bg_color)
 
   erb(:home)
@@ -73,5 +80,4 @@ def request_colors_apis(fg_color, bg_color)
   @aa_large = webaim_api_parsed["AALarge"].to_s
   @aaa = webaim_api_parsed["AAA"].to_s
   @aaa_large = webaim_api_parsed["AAALarge"].to_s
-
 end
