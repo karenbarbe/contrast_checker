@@ -29,3 +29,7 @@ To run this app:
 - As a user, I want to easily identify which color is being used for the foreground and background respectively.
 - As a user, I want to receive clear messages when a color combination passes or fail a requirement.
 - As a user, I want to visualize how the compared colors look like when in use.
+
+## Functional specs
+
+[Specs and requirements](https://gist.github.com/karenbarbe/e306a957d41166f15420e3aa389026b1)
